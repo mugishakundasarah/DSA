@@ -44,23 +44,60 @@ int pick(){
 
 void display(){
     if(!isEmpty()){
+        cout << " The elements in the stack are: ";
         for (int i = top; i >= 0; i--)
         {
-            cout << stack[i] << endl;
+            cout << stack[i] << "\t";
         }
+        cout << endl;
+    }
+    else{
+        cout << "stack underflow" << endl;
     }
 }
 int main(){
-    push(3);
-    push(6);
-    push(9);
-    push(10);
-    push(71);
+    
+    cout << " ######## WELCOME TO THE STACK PROGRAM ########## " << endl ;
+    char answer = 'Y';
+    int option;
+    while (answer == 'Y')
+    {
+        cout << " SELECT BETWEEN THESE OPERATIONS: " << endl ;
+        cout << " (1) for POP " ;
+        cout << " (2) for PUSH  " ;
+        cout << " (3) for PICK : ";
+        cin >> option ;
+        
+        switch (option)
+        {
+            case 1:
+                pop();
+                display();
+                break;
+        
+            case 2:
+                cout << "input push value : ";
+                int value;
+                cin >> value;
+                push(value);
+                display();
+                break;
 
-    display();
-    pop();
-    display();
-    cout << "The current element is " << pick() << endl;
+            case 3:
+                cout << pick() << endl;
+                break;
+
+            default:
+                cout << "please choose among the given options" << endl;
+                break;
+        }
+
+        cout << "do you want to continue?? (Y/N) : ";
+        cin >> answer ;
+    }
+    
+
+
 }
 
 
