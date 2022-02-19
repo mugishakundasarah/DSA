@@ -95,9 +95,6 @@ int main(){
         cout << "do you want to continue?? (Y/N) : ";
         cin >> answer ;
     }
-    
-
-
 }
 
 
