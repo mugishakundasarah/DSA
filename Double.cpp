@@ -85,6 +85,28 @@ struct Doubly{
             }
         }
 
+        void insertBefore(Node *node, int data) { 
+            Node* newNode = new Node(data);
+            if (node == NULL)
+            {
+                cout << "Please insert Node with data";
+            }
+
+            if (node->previous == NULL)
+            {
+                head = newNode;
+                head->previous = NULL;
+                head->next= node;
+                node->previous = head;
+            }
+            
+            Node *before = node->previous;
+            before->next = newNode;
+            newNode->previous = before;
+            node->previous = newNode;
+            newNode->next = node;
+        }
+
         void insertAfter(Node *node, int data){
             Node* newNode = new Node(data);
             if (node->next == NULL)
@@ -117,5 +139,11 @@ int main(){
 
 
     cout << "after insert " << endl;
+    doubly1.printFromFront();
+
+
+    doubly1.insertBefore(insert4, 4000);
+
+    cout << "insert before " << endl;
     doubly1.printFromFront();
 }
