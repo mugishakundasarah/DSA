@@ -67,7 +67,9 @@ void mergeSort(int arr[], int begin, int end){
     int mid = (begin + end)/2;
     cout << "Begin " << begin << " Mid " << mid << " End " << end << endl;   
     mergeSort(arr,begin, mid);
+    cout << endl << endl;
     mergeSort(arr, mid + 1 , end);
+    cout << " final merging " << endl;
     merge(arr, begin, mid, end);
 }
 
