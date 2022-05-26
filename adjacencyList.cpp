@@ -51,11 +51,14 @@ class AdjacencyList {
 
 int main(){
     AdjacencyList list(5);
+    list.add_edge(1,2);
     list.display();
-    list.add_edge(0,1);
-    list.add_edge(1, 1);
-    list.add_edge(1,0);
-    list.display();
-    list.delete_edge(1,0);
-    list.display();
+    
+    
+    // list.add_edge(0,1);
+    // list.add_edge(1, 1);
+    // list.add_edge(1,0);
+    // list.display();
+    // list.delete_edge(1,0);
+    // list.display();
 }
