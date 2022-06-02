@@ -27,16 +27,20 @@ void display(Node* rootNode){
 
     while (!queue.empty())
     {
-        Node* current = queue.front();
-        cout << current->value;
-        for(Node* i:current->children){
-            queue.push_back(i);
+        int size = queue.size();
+        while (size > 0)
+        {
+            Node* current = queue.front();
+            cout << current->value;
+            for(Node* i:current->children){
+                queue.push_back(i);
+            }
+            queue.pop_front();
+            size --;
         }
-        queue.pop_front();
-        cout << ",";
+        cout << endl;
     }
     
-        cout << endl;
 }
 
 int main(){
