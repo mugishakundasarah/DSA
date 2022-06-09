@@ -49,6 +49,23 @@ class BinaryTree{
         inOrderTraversal(root->right);
     }
 
+    void preOrder(Node* root){
+        if(root==NULL){
+            return;
+        }
+        cout << root->data << " ";
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+
+    void postOrderTraversal(Node* root){
+        if(root == NULL){
+            return;
+        }
+        postOrderTraversal(root->left);
+        postOrderTraversal(root->right);
+        cout << root->data << " ";
+    }
 };
 
 int main(){
@@ -67,6 +84,15 @@ int main(){
     Node* lrRight = bt.addNode(rRight, 3,false);
     Node* rrRight = bt.addNode(rRight, 15, true);
 
+    cout << "Inorder" << endl;
     bt.inOrderTraversal(root);
+    cout << endl;
+
+    cout << "Preorder" << endl;
+    bt.preOrder(root);
+    cout << endl;
+
+    cout << "Postorder" << endl;
+    bt.postOrderTraversal(root);
     cout << endl;
 }   
