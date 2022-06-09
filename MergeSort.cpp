@@ -74,12 +74,12 @@ void mergeSort(int arr[], int begin, int end){
 }
 
 int main(){
-    int arr[] = {11,10, 7,4,8,3};
-    int arrSize = 6;
+    int arr[] = {85, 24, 63, 45, 17, 31, 96, 50};
+    int arrSize = 8;
     cout<< "Unsorted is : ";
-    print(arr, 6);
+    print(arr, arrSize);
     cout << endl;
-    mergeSort(arr, 0, 5);
-    print(arr, 6);
+    mergeSort(arr, 0, arrSize);
+    print(arr, arrSize);
     cout << endl;
 }
